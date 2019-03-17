@@ -19,7 +19,6 @@ class App extends Component {
     });
 
     const person = {...this.state.persons[personIndex]};
-    console.log(person);
     person.name = event.target.value;
 
     const persons = [...this.state.persons];
@@ -79,36 +78,6 @@ class App extends Component {
           Toggle Persons
         </button>
         {persons}
-        {/* Aşağıdaki  gibi de kullanılabilir ? ve : conditional kullanılarak yada render içinde javascript
-        Kullanarak da yapabiliriz. Ben javascript i tercih ettim. */}
-        {/* {this.state.showPersons ? 
-          <div>
-            <Person
-              name={this.state.persons[0].name}
-              job={this.state.persons[0].job}
-            >
-              <h4>I am children</h4>
-              <p>Children aradaki özellikleri alır</p>
-            </Person>
-            <Person
-              name={this.state.persons[1].name}
-              job={this.state.persons[1].job}
-              changeName={this.nameChangedHandler}
-            />
-            <Person
-              name={this.state.persons[2].name}
-              job={this.state.persons[2].job}
-              //click={()=> this.swicthNamehandler('Person Functional Component on Change Name')} şeklinde de çalışır
-              //ancak app boyutu büyüdüğünde ve bu kullanım arttığında performans kaybı yaşanır. anonymos func bu yüzden
-              //çok yararlı değildir. Zorunda olmadıkça kullanmamalıyız.
-              click={this.swicthNameHandler.bind(
-                this,
-                "Person Functional Component on Change Name"
-              )}
-            />
-          </div>
-         : 
-          <p>Hidden List</p>} */}
       </div>
     );
   }
