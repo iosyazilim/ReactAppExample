@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classes from './App.css';
 import Person from './Person/Person';
 
+
 class App extends Component {
   state = {
     persons: [
@@ -58,6 +59,7 @@ class App extends Component {
               age={person.age}
               key={person.id}
               changed={( event ) => this.nameChangedHandler( event, person.id )} />
+          
           } )}
         </div>
       );
