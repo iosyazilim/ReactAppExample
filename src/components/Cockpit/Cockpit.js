@@ -1,9 +1,10 @@
-import React, { useEffect, Fragment, useRef } from "react";
+import React, { useEffect, Fragment, useRef, useContext } from "react";
 import classes from "./Cockpit.css";
+import AuthContext from '../../context/auth-context';
 
 const Cockpit = (props) => {
   const toggleButtonRef = useRef(null) //React.createRef(); yerine useRef() kullandık. çünkü functional component.
-  
+  const authContext = useContext(AuthContext);
 
   useEffect(() =>{
     console.log('[Cockpit.js] useEffect');
@@ -43,6 +44,8 @@ const Cockpit = (props) => {
       <button ref={toggleButtonRef} className={btnClass} onClick={props.clicked}>
         Toggle Persons
       </button>
+       <button onClick={authContext.login}>Log In</button>
+    
     </div>
     </Fragment>
 
